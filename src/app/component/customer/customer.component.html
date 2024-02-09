@@ -1,0 +1,75 @@
+<!-- Add this table to your existing HTML -->
+<table class="product-table">
+  <tr>
+    <th></th>
+    <th>{{ previousYear | date:'yyyy' }}</th>
+    <th>New Customer Acquired</th>
+    <th>{{ yesterday | date:'mediumDate' }}</th>
+  </tr>
+
+  <!-- Male -->
+  <tr>
+    <td>Male</td>
+    <td>{{ customerSumPrevY.maleSumPrevY }}</td> <!-- Empty cell -->
+    <td>{{customerSumNew.maleSumNew}}</td> 
+    <td>{{ customerSum.maleSum }}</td> 
+  </tr>
+
+  <!-- Female -->
+  <tr>
+    <td>Female</td>
+    <td>{{ customerSumPrevY.femaleSumPrevY }}</td> <!-- Empty cell -->
+    <td>{{customerSumNew.femaleSumNew}}</td> 
+    <td>{{ customerSum.femaleSum }}</td> 
+  </tr>
+
+  <!-- Other -->
+  <tr>
+    <td>Other</td>
+    <td>{{ customerSumPrevY.otherSumPrevY }}</td> <!-- Empty cell -->
+    <td>{{customerSumNew.otherSumNew}}</td> 
+    <td>{{ customerSum.otherSum }}</td> 
+  </tr>
+
+  <!-- Non-Individual -->
+  <tr>
+    <td>Non-Individual</td>
+    <td>{{ customerSumPrevY.nonIndividualSumPrevY }}</td> <!-- Empty cell -->
+    <td>{{customerSumNew.nonIndividualSumNew}}</td> 
+    <td>{{ customerSum.nonIndividualSum }}</td> 
+  </tr>
+
+
+   <tr>
+    <td>Total</td>
+    <td>{{customerSumPrevY.totalSumPrevY}}</td> <!-- Empty cell -->
+    <td>{{customerSumNew.totalSumNew}}</td> 
+    <td>{{customerSum.totalSum}}</td> 
+  </tr>
+
+  <!-- SR Citizen -->
+  <tr>
+    <td>SR Citizen</td>
+    <td>{{ customerSumPrevY.srSumPrevY}}</td> <!-- Empty cell -->
+    <td>{{customerSumNew.srSumNew}}</td> 
+    <td>{{ customerSum.srSum}}</td> 
+  </tr>
+
+  <!-- NRI -->
+  <tr>
+    <td>NRI</td>
+    <td>{{ customerSumPrevY.NriSumPrevY }}</td> <!-- Empty cell -->
+    <td>{{customerSumNew.NriSumNew}}</td> 
+    <td>{{ customerSum.NriSum }}</td> 
+  </tr>
+
+  <!-- MB Customer -->
+  <tr>
+    <td>MB Customer</td>
+    <td>{{ customerSumPrevY.MbSumPrevY }}</td> <!-- Empty cell -->
+    <td>{{customerSumNew.MbSumNew}}</td> 
+    <td>{{ customerSum.MbSum }}</td> 
+  </tr>
+
+ 
+</table>

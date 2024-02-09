@@ -1,0 +1,108 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px; /* Add padding to the container */
+}
+
+.tile-list-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.center-text {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.tile {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  background-color: #103961;
+}
+
+.tile:hover {
+  background-color: #a32424;
+  color: white; /* Text color when hovering */
+  transform: scale(1.1); 
+}
+
+.custom-dropdown {
+  margin-top: 10px;
+}
+
+.product-table {
+  width: 60%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.product-table th {
+  background-color: #f2f2f2;
+}
+
+.product-table td {
+  background-color: #fff;
+}
+
+.product-table td.empty-column {
+  width: 20px;
+}
+
+.plus-column {
+  width: 20px;
+}
+
+.dropdown-container{
+  padding-top: 50px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+/* Existing CSS styles remain unchanged */
+
+@media only screen and (max-width: 600px) {
+  /* Adjust tile size for smaller screens */
+  .tile {
+    width: 120px;
+    padding: 15px;
+    height: 55px;
+    font-size: smaller;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .tile-list-horizontal::after {
+    clear: both;
+  }
+
+  .tile:hover {
+    background-color: #a32424;
+    color: white; /* Text color when hovering */
+    transform: scale(1.1); /* Enlarge the tile on hover */
+  }
+  .tile {
+    margin: 10px auto; /* Center tiles horizontally */
+  }
+
+  .tile:nth-child(3) {
+    margin-top: 20px; /* Add margin to separate Total Business tile */
+  }
+}

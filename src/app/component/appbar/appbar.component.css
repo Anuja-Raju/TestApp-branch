@@ -1,0 +1,37 @@
+/* app.component.css */
+
+.app-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.light-red {
+  background-color: #bd4141; /* Light red color */
+  height: 45px; /* Adjust the height as needed */
+}
+
+.dark-blue {
+  background-color: #103961; /* Dark blue color */
+  height: 30px; /* Adjust the height as needed */
+}
+
+.light-blue {
+ 
+  height: 40px; /* Adjust the height as needed */
+  display: flex;
+  justify-content: flex-end; /* Align the items to the end (right) of the container */
+  align-items: center;
+  padding-right: 16px; /* Add right padding to the light-blue bar */
+}
+
+.logo-image {
+  width: 100px;
+  height: 40px;
+}
+
+.logout-button {
+  width: 60px;
+  background-color: #103961;
+  color: white;
+  
+}

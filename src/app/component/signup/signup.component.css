@@ -1,0 +1,82 @@
+/* signup.component.css */
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.signup-box {
+  border: 1px solid #ddd;
+  width: 400px;
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+  background-color: #bd4141;
+  position: relative;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+select,
+input {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #103961;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+.back-button {
+  background-color: #103961;
+  margin-right: 10px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+a {
+  color: #103961;
+  cursor: pointer;
+}
+
+.app-bar {
+  background-color: #103961;
+  padding: 10px;
+}
+
+.signup-heading {
+  margin: 0;
+}
+
+div {
+  margin-bottom: 5px;
+}
+
+.bottom-section {
+  background-color: #103961;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10;
+  height: 100px;
+}
+
+@media (max-width: 768px) {
+  .signup-box {
+    width: 80%; /* Adjust the width as needed for smaller screens */
+    margin-top: 15%; /* Adjust the margin as needed */
+  }
+}

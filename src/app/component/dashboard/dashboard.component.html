@@ -1,0 +1,49 @@
+<!-- dashboard.component.html -->
+<div class="dashboard-container">
+
+  <!-- Daily Business Snapshot Header in the center -->
+  <h2 class="center-text">Daily Business Snapshot - {{ today }}</h2>
+
+  <input type="text" placeholder="Filter/Search" [(ngModel)]="filterText" (input)="onFilterInputChange()">
+
+  <!-- List of Tiles displayed horizontally -->
+  <div class="tile-list-horizontal">
+    <!-- Tile for Total Deposit -->
+    <div class="tile">
+      <h3>Total Deposits</h3>
+      <p>{{ totalDepositAmount | currency:'INR':'symbol':'1.2-2' }}</p>
+    </div>
+
+    <!-- Tile for Total Advance -->
+    <div class="tile">
+      <h3>Total Advances</h3>
+      <p>{{ totalAdvanceAmount | currency:'INR':'symbol':'1.2-2' }}</p>
+    </div>
+
+    <!-- Tile for Total Business -->
+    <div class="tile">
+      <h3>Total Business</h3>
+      <p>{{ totalBusinessAmount | currency:'INR':'symbol':'1.2-2' }}</p>
+    </div>
+  </div>
+  
+<app-customer></app-customer>
+  <!-- Dropdown for selecting deposit or advance -->
+ <!-- Dropdown for selecting deposit or advance -->
+ <div class="dropdown-container">
+  <select class="custom-dropdown" [(ngModel)]="selectedOption" (change)="onSelectChange()">
+    <option value="" disabled selected>Select</option>
+    <option value="deposit">Deposit</option>
+    <option value="advance">Advance</option>
+  </select>
+  <br>
+  <div *ngIf="selectedOption === 'deposit'">
+    <!-- Include the deposit table here -->
+    <app-deposit></app-deposit>
+  </div>
+  <div *ngIf="selectedOption === 'advance'">
+    <!-- Include the deposit table here -->
+    <app-advance></app-advance>
+  </div>
+</div>
+</div>

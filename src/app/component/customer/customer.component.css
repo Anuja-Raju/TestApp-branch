@@ -1,0 +1,54 @@
+/* Add this to your deposit.component.css file */
+.deposit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .center-text {
+    text-align: center;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    align-items: center;
+  }
+  
+  .product-table th {
+    background-color: #103961;
+    color: white;
+    border: 1px solid #ddd;
+    padding: 12px; /* Adjust the padding as needed */
+    text-align: center;
+    font-weight: bold; /* Add bold font for headings */
+  }
+  
+  .product-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .product-table td.empty-column {
+    width: 20px;
+  }
+  
+  .product-table td {
+    background-color: #fff;
+  }
+  
+  .plus-column {
+    width: 20px;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    /* Adjust styles for smaller screens */
+    .product-table th,
+    .product-table td {
+      padding: 5px;
+    }
+  }

@@ -1,0 +1,51 @@
+<!-- login.component.html -->
+
+<div class="login-container">
+  <div class="login-box">
+    <div class="app-bar">
+      <h2 class="login-heading">Management Information System</h2>
+    </div>
+    <h4>Login</h4>
+    <div>
+    </div>
+
+    <div class="user-id-input">
+      <input type="text" id="userId" name="userId" [(ngModel)]="userId" placeholder="User ID" />
+      <i class="fas fa-user"></i>
+    </div>
+
+    <div class="password-input">
+      <input type="{{ showPassword ? 'text' : 'password' }}" id="password" name="password" [(ngModel)]="password" placeholder="Password" />
+      <i class="fas fa-eye" (click)="togglePassword()"></i>
+    </div>
+<div class="captcha-container">
+  <label for="captcha"></label>
+  <div class="captcha-input">
+    <input type="text" id="captcha" [(ngModel)]="enteredCaptcha" placeholder="Enter Captcha" />
+    <img [src]="'https://via.placeholder.com/150x40?text=' + captchaImage" alt="Captcha" />
+  </div>
+  <button class="refresh-captcha" (click)="refreshCaptcha()">
+    <i class="fas fa-sync-alt"></i>
+  </button>
+  
+  <button class='login-button' (click)="login()">Login</button>
+</div>
+<h4><p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p></h4>
+    <div class="additional-info">
+     <p class="password-request">
+        <a> Forgot Password?             </a>
+        <a href="mailto:esaf012024@gmail.com"> Please send password to my mail id</a>
+      </p>     
+      <div class="signup-section">
+        <span>New User?            </span>
+        <button class='signup-button' (click)="navigateToSignup()">Signup</button>
+      </div>
+    </div>
+
+    <div class="bottom-section">
+      <p> For Assistance Please Contact.</p>
+      <p>Email: esaf012024&#64;gmail.com</p>
+    </div>
+    <br><br>
+  </div>
+</div>

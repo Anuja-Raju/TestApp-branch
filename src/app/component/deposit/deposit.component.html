@@ -1,0 +1,265 @@
+
+
+  <table class="product-table">
+    <tr>
+      <th>Branch ID</th>
+      <th>Key Parameters</th>
+      <th>{{ yesterday | date:'mediumDate' }}(#)</th>
+      
+      <th>{{ yesterday | date:'mediumDate' }}(&#8377;)</th>
+    
+    </tr>
+    <tr>
+      <td>1102</td> 
+      <td>
+        <button (click)="toggleProducts('CA_Retail')">
+          {{ isExpanded('CA_Retail') ? '-' : '+' }}
+        </button>
+        CA_Retail
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <ng-container *ngIf="isExpanded('CA_Retail')">
+      <tr>
+        <td>1102</td> 
+        <td>Current account basic</td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>1102</td> 
+        <td>Current account classic</td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>1102</td> 
+        <td>CA Premium with sweep</td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>1102</td> 
+        <td> Basic agent</td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>1102</td> 
+        <td>Escrow account</td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>1102</td> 
+        <td>CA Premium without sweep</td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>1102</td> 
+        <td>CA Diamond without sweep</td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <!-- Add more products as needed -->
+    </ng-container>
+
+    <tr>
+      <td>1102</td> 
+      <td>
+        <button (click)="toggleProducts('CA_NRI')">
+          {{ isExpanded('CA_NRI') ? '-' : '+' }}
+        </button>
+        CA_NRI
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <ng-container *ngIf="isExpanded('CA_NRI')">
+      <tr>
+        <td>1102</td> 
+        <td>CAA NRE</td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>1102</td> 
+        <td>CA NRO</td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <!-- Add more products for CA_NRI as needed -->
+    </ng-container>
+    <tr>
+      <td>1102</td> 
+        <td>
+          <button (click)="toggleProducts('SA_MB')">
+            {{ isExpanded('SA_MB') ? '-' : '+' }}
+          </button>
+          SA_MB
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <ng-container *ngIf="isExpanded('SA_MB')">
+        <tr> 
+          <td>1102</td> 
+          <td>SB Lalith</td>
+          <td></td> <!-- Empty column -->
+          <td></td>
+        </tr>
+        
+       </ng-container>
+
+      <tr>
+        <td>1102</td> 
+        <td>
+          <button (click)="toggleProducts('SA_Retail')">
+            {{ isExpanded('SA_Retail') ? '-' : '+' }}
+          </button>
+          SA_Retail
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <ng-container *ngIf="isExpanded('SA_Retail')">
+        <tr>
+          <td>1102</td> 
+          <td>SB Mahila</td>
+          <td></td> <!-- Empty column -->
+          <td></td>
+        </tr>
+        <tr>
+          <td>1102</td> 
+          <td>SB Regular</td>
+          <td></td> <!-- Empty column -->
+          <td></td>
+        </tr>
+        <tr>
+            <td>1102</td> 
+            <td>SB Senior citizen</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>SB Premium with sweep(Expired)</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>SB Premium without sweep</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>SB TASC</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>SB Student</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>SB Salary account</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>SB Staff</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>SB Lalith Plus</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>SB Zero balance</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>SB Krishak bandhu</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>525 - SB Salary standard</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+      </ng-container>
+      <tr>
+        <td>1102</td> 
+        <td>
+          <button (click)="toggleProducts('SA_NRI')">
+            {{ isExpanded('SA_NRI') ? '-' : '+' }}
+          </button>
+          SA_NRI
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <ng-container *ngIf="isExpanded('SA_NRI')">
+        <tr>
+          <td>1102</td> 
+          <td>SB NRE</td>
+          <td></td> <!-- Empty column -->
+          <td></td>
+        </tr>
+        <tr>
+          <td>1102</td> 
+          <td>SB NRO</td>
+          <td></td> <!-- Empty column -->
+          <td></td>
+        </tr>
+        <tr>
+          <td>1102</td> 
+            <td>SB NRE Prem sweep(Expired)</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+          <tr>
+            <td>1102</td> 
+            <td>SB NRE Prem without sweep</td>
+            <td></td> <!-- Empty column -->
+            <td></td>
+          </tr>
+        <!-- Add more products for SA_NRI as needed -->
+      </ng-container>
+      <tr>
+        <td>1102</td> 
+        <td>
+          <button (click)="toggleProducts('TDA_MB')">
+            {{ isExpanded('TDA_MB') ? '-' : '+' }}
+          </button>
+          TDA_MB
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <ng-container *ngIf="isExpanded('TDA_MB')">
+        <tr>
+          <td>1102</td> 
+          <td>Recurring deposit weekly</td>
+          <td></td> <!-- Empty column -->
+          <td></td>
+        </tr>
+      </ng-container>
+  </table>
+

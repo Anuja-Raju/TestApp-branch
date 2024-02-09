@@ -1,0 +1,21 @@
+<table class="product-table">
+  <tr>
+    <th>Key Parameters</th>
+    <th>{{ yesterday | date:'mediumDate' }}(#)</th>
+    
+    <th>{{ yesterday | date:'mediumDate' }}(&#8377;)</th>
+  </tr>
+
+  <tr>
+    <td>
+      <button (click)="toggleProducts('Agri Loan')">
+        {{ isExpanded('Agri Loan') ? '-' : '+' }}
+      </button>
+      Agri Loan
+    </td>
+    <td>{{mainProductAdvanceSum.AgriLoanCnt}}</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.AgriLoanOs}}</td>
+  </tr>
+ 
+
+</table>

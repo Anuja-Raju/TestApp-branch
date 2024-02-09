@@ -1,0 +1,60 @@
+<!-- signup.component.html -->
+
+<div class="signup-container">
+
+  <div class="signup-box">
+    <div class="app-bar">
+      <h2 class="signup-heading">Management Information System</h2>
+    </div>
+    <h4>Signup</h4>
+<form>
+    <div>
+      <select id="userType" name="userType" [(ngModel)]="selectedUserType" title="Select User Type">
+        <option value="" disabled selected>Select User Type</option>
+        <option value="office">Office User</option>
+        <option value="branch">Branch User</option>
+      </select>
+    </div>
+
+    <div>
+     <input type="text" id="userId" name="userId" [(ngModel)]="userId" placeholder="User ID" /><br> 
+      
+    </div>
+
+    <div>
+       <input type="password" id="password" name="password"  [(ngModel)]="password" placeholder="Password" />
+    </div>
+
+    <div>
+      <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password" />
+    </div>
+   
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <button (click)="submit()">Submit</button>
+  </form>
+    <br>
+    <div class="bottom-section">
+      <p> For Assistance Please Contact.</p>
+      <p>Email: esaf012024&#64;gmail.com</p>
+    </div>
+  </div>
+</div>  
+
+ <!-- signup.component.html 
+<form>
+  <select id="userType" name="userType" [(ngModel)]="selectedUserType" title="Select User Type">
+    <option value="" disabled selected>Select User Type</option>
+    <option value="office">Office User</option>
+    <option value="branch">Branch User</option>
+  </select>
+  <label for="userId">User ID</label><br>
+  <input type="text" id="userId" name="userId" [(ngModel)]="userId"><br>
+  <label for="password">Password</label><br>
+  <input type="password" id="password" name="password"  [(ngModel)]="password" ><br><br>
+  <label for="confirmPassword">Confirm Password</label><br>
+  <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" ><br><br>
+  <button (click)="submit()">Submit</button>
+  
+</form> 
+-->
