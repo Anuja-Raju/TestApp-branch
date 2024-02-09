@@ -13,9 +13,429 @@
       </button>
       Agri Loan
     </td>
-    <td>{{mainProductAdvanceSum.AgriLoanCnt}}</td> <!-- Empty column -->
-    <td>{{mainProductAdvanceSum.AgriLoanOs}}</td>
+    <td>{{mainProductAdvanceSum.AgriLoanCnt}}
+</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.AgriLoanOs}}
+</td>
   </tr>
+  <ng-container *ngIf="isExpanded('Agri Loan')">
+    <tr>
+      <td>ESAF Loan against Gold for Agriculturist
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ELAGA75
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+  </ng-container>
+
+
+  <tr>
+    <td>
+      <button (click)="toggleProducts('Auto Loan')">
+        {{ isExpanded('Auto Loan') ? '-' : '+' }}
+      </button>
+      Auto Loan
+    </td>
+    <td>{{mainProductAdvanceSum.AutoLoanCnt}}
+</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.AutoLoanOs}}
+</td>
+  </tr>
+  <ng-container *ngIf="isExpanded('Auto Loan')">
+    <tr>
+      <td>ESAF TWO WHEELER LOAN MTH
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ESAF 3 WHEELER LOAN MTH
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ESAF Car Loan New Direct
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ESAF Car Loan Used Direct
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ESAF LCV New Direct
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ESAF LCV LOAN USED
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ESAF VEHICLE LOAN 2W
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+  </ng-container>
+
+  <tr>
+    <td>
+      <button (click)="toggleProducts('Business Loan')">
+        {{ isExpanded('Business Loan') ? '-' : '+' }}
+      </button>
+      Business Loan
+    </td>
+    <td>{{mainProductAdvanceSum.BusinessLoanCnt}}
+</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.BusinessLoanOs}}
+</td>
+  </tr>
+  <ng-container *ngIf="isExpanded('Business Loan')">
+    <tr>
+      <td>ESAF BUSINESS LOAN
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ESAF BUSINESS LOAN FORTNI
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    
+  </ng-container>
+
+  <tr>
+    <td>
+      <button (click)="toggleProducts('CC OD Loan')">
+        {{ isExpanded('CC OD Loan') ? '-' : '+' }}
+      </button>
+      CC OD Loan
+    </td>
+    <td>{{mainProductAdvanceSum.CcOdLoanCnt}}
+</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.CcOdLoanOs}}</td>
+  </tr>
+  <ng-container *ngIf="isExpanded('CC OD Loan')">
+    <tr>
+      <td>ESAF NEW CC OD
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>     
+  </ng-container>
+
+  <tr>
+    <td>
+      <button (click)="toggleProducts('Clean Energy Loan')">
+        {{ isExpanded('Clean Energy Loan') ? '-' : '+' }}
+      </button>
+      Clean Energy Loan
+    </td>
+    <td>{{mainProductAdvanceSum.CleanEnergyLoanCnt}}
+</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.CleanEnergyLoanOs}}
+</td>
+  </tr>
+  <ng-container *ngIf="isExpanded('Clean Energy Loan')">
+    <tr>
+      <td>ESAF GENCLN ENGY PRD MTLY
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>    
+  </ng-container>
+
+   
+  <tr>
+    <td>
+      <button (click)="toggleProducts('Gold Loan')">
+        {{ isExpanded('Gold Loan') ? '-' : '+' }}
+      </button>
+      Gold Loan
+
+    </td>
+    <td>{{mainProductAdvanceSum.GoldLoanCnt}}
+</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.GoldLoanOs}}
+</td>
+  </tr>
+  <ng-container *ngIf="isExpanded('Gold Loan')">
+    <tr>
+      <td>ESAF GOLD LOAN GENERAL
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ESAF GOLD LOAN 120 DAYS
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+  </ng-container>
+  
+  <tr>
+    <td>
+      <button (click)="toggleProducts('KCC Loan')">
+        {{ isExpanded('KCC Loan') ? '-' : '+' }}
+      </button>
+      KCC Loan
+    </td>
+    <td>{{mainProductAdvanceSum.KccLoanCnt}}
+</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.KccLoanOs}}
+</td>
+  </tr>
+  <ng-container *ngIf="isExpanded('KCC Loan')">
+    <tr>
+      <td>ESAF KCC Credit
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>    
+  </ng-container>
  
+  <tr>
+    <td>
+      <button (click)="toggleProducts('Loan Against Deposit')">
+        {{ isExpanded('Loan Against Deposit') ? '-' : '+' }}
+      </button>
+      Loan Against Deposit
+    </td>
+    <td>{{mainProductAdvanceSum.LoanAgainstDepoCnt}}</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.LoanAgainstDepoOs}}</td>
+  </tr>
+  <ng-container *ngIf="isExpanded('Loan Against Deposit')">
+    <tr>
+      <td>ESAF LOAN AGAINST TD
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>    
+    <tr>
+      <td>ESAF OD-AGAINST-FD
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr> 
+  </ng-container>
+
+  <tr>
+    <td>
+      <button (click)="toggleProducts('Loan Against Property')">
+        {{ isExpanded('Loan Against Property') ? '-' : '+' }}
+      </button>
+      Loan Against Property
+    </td>
+    <td>{{mainProductAdvanceSum.LoanAgainstPropertyCnt}}
+</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.LoanAgainstPropertyOs}}
+</td>
+  </tr>
+  <ng-container *ngIf="isExpanded('Loan Against Property')">
+    <tr>
+      <td>ESAF LOAN AGAINST PROP
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>    
+    <tr>
+      <td>ESAF LAP WEEKLY
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr> 
+    <tr>
+      <td>ESAF LAP FORTNIGHTLY
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+  </ng-container>
+
+
+  <tr>
+    <td>
+      <button (click)="toggleProducts('Micro Fianance Loan')">
+        {{ isExpanded('Micro Fianance Loan') ? '-' : '+' }}
+      </button>
+      Micro Fianance Loan
+    </td>
+    <td>{{mainProductAdvanceSum.MicroFinanceLoanCnt}}
+</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.MicroFinanceLoanOs}}
+</td>
+  </tr>
+  <ng-container *ngIf="isExpanded('Micro Fianance Loan')">
+    <tr>
+      <td>Income Generation Loan</td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>Utdhan Loan</td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>Business Loan AGORA BC
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td> Pratheeksha kiran
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>Monthly IGL Loan KAMAL
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ESAF Income Generation Loan
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <tr>
+      <td>ESAF Nano
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>
+    <!-- Add more products as needed -->
+  </ng-container>
+
+    <tr>
+      <td>
+        <button (click)="toggleProducts('Mortgage Loan')">
+          {{ isExpanded('Mortgage Loan') ? '-' : '+' }}
+        </button>
+        Mortgage Loan
+      </td>
+      <td>{{mainProductAdvanceSum.MortgageLoanCnt}}
+</td> <!-- Empty column -->
+      <td>{{mainProductAdvanceSum.MortgageLoanOs}}
+</td>
+    </tr>
+    <ng-container *ngIf="isExpanded('Mortgage Loan')">
+      <tr>
+        <td>ESAF MICRO HOUSING LOAN
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>ESAF MICRO HOUSING WEEKLY 
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>ESAF MICRO HOUSING FORTNI
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>ESAF DREAM HOME LOAN
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>ESAF AHL-MONTHLY
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+    </ng-container>
+
+    
+    <tr>
+      <td>
+        <button (click)="toggleProducts('Personal Loan')">
+          {{ isExpanded('Personal Loan') ? '-' : '+' }}
+        </button>
+        Personal Loan
+      </td>
+      <td>{{mainProductAdvanceSum.PersonalLoanCnt}}
+</td> <!-- Empty column -->
+      <td>{{mainProductAdvanceSum.PersonalLoanOs}}
+</td>
+    </tr>
+    <ng-container *ngIf="isExpanded('Personal Loan')">
+      <tr>
+        <td>ESAF PERSONAL LOAN WEEKLY
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>ESAF PERSONAL LOAN FORTNI
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>ESAF PERSONAL LOAN MTH
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>ESAF PERSONAL LOAN
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+      <tr>
+        <td>ESAF Salary Overdraft 
+        </td>
+        <td></td> <!-- Empty column -->
+        <td></td>
+      </tr>
+    </ng-container>
+
+    
+  <tr>
+    <td>
+      <button (click)="toggleProducts('Term Loan')">
+        {{ isExpanded('Term Loan') ? '-' : '+' }}
+      </button>
+      Term Loan
+    </td>
+    <td>{{mainProductAdvanceSum.TermLoanCnt}}
+</td> <!-- Empty column -->
+    <td>{{mainProductAdvanceSum.TermLoanOs}}
+</td>
+  </tr>
+  <ng-container *ngIf="isExpanded('Term Loan')">
+    <tr>
+      <td>ESAF Term Loan
+      </td>
+      <td></td> <!-- Empty column -->
+      <td></td>
+    </tr>    
+  </ng-container>
 
 </table>

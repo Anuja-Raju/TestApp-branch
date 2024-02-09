@@ -12,6 +12,8 @@ export class AuthService {
   private apiUrl = 'http://192.168.25.106:3000/'; 
   getCustomerSumPrevY: any;
   getProductsForCategory: any;
+  getmainProductAdvanceSum:any;
+  getmainProductDepositSum:any;
 
   constructor(private http: HttpClient) {}
 
@@ -44,8 +46,12 @@ getNewCustomerSumQuery(): Observable<any> {
 }
 
 
-getMainProductsAdvance(): Observable<any> {
+getAdvanceSum(): Observable<any> {
   return this.http.get(`${this.apiUrl}mainProductAdvanceSum`);
+}
+
+getDepositSum(): Observable<any> {
+  return this.http.get(`${this.apiUrl}mainProductDepositSum`);
 }
 
 }

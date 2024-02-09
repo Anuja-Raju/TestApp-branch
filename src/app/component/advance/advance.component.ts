@@ -43,7 +43,7 @@ export class AdvanceComponent implements OnInit{
   // }
 
   fetchMainProductsAdvance() {
-    this.authService.getMainProductsAdvance().subscribe(
+    this.authService.getAdvanceSum().subscribe(
       (data: any) => {
         this.mainProductAdvanceSum = data;
       },
