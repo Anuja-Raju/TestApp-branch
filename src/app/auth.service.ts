@@ -14,6 +14,8 @@ export class AuthService {
   getProductsForCategory: any;
   getmainProductAdvanceSum:any;
   getmainProductDepositSum:any;
+  getsubProductDepositSum:any;
+  getsubProductAdvanceSum: any;
 
   constructor(private http: HttpClient) {}
 
@@ -52,6 +54,14 @@ getAdvanceSum(): Observable<any> {
 
 getDepositSum(): Observable<any> {
   return this.http.get(`${this.apiUrl}mainProductDepositSum`);
+}
+
+getSubDepositSumQuery(): Observable<any> {
+  return this.http.get(`${this.apiUrl}subProductDepositSum`);
+}
+
+getSubAdvanceSumQuery (): Observable<any> {
+  return this.http.get(`${this.apiUrl}subProductAdvanceSum`);
 }
 
 }

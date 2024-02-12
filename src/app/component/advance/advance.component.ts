@@ -11,6 +11,7 @@ export class AdvanceComponent implements OnInit{
   yesterday: Date;
   expandedProducts: { [key: string]: boolean } = {};
   mainProductAdvanceSum: any;
+  subProductAdvanceSum: any;
 
   constructor(private authService: AuthService) {
     // Calculate yesterday's date
@@ -21,6 +22,7 @@ export class AdvanceComponent implements OnInit{
   }
   ngOnInit(){
     this.fetchMainProductsAdvance();
+    this.fetchSubAdvanceSumQuery();
   }
   
 
@@ -48,10 +50,20 @@ export class AdvanceComponent implements OnInit{
         this.mainProductAdvanceSum = data;
       },
       (error: any) => {
-        console.error('Error fetching customer sum:', error);
+        console.error('Error fetching products sum:', error);
       }
     );
   }
 
+  fetchSubAdvanceSumQuery() {
+    this.authService.getSubAdvanceSumQuery().subscribe(
+      (data: any) => {
+        this.subProductAdvanceSum = data;
+      },
+      (error: any) => {
+        console.error('Error fetching sub products sum:', error);
+      }
+    );
+  }
 
 }

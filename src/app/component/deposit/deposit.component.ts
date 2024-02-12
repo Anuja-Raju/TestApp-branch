@@ -11,6 +11,7 @@ export class DepositComponent {
   yesterday: Date;
   expandedProducts: { [key: string]: boolean } = {};
   mainProductDepositSum: any;
+  subProductDepositSum: any;
 
   constructor(private router: Router, private authService: AuthService) {
     // Calculate yesterday's date
@@ -19,7 +20,8 @@ export class DepositComponent {
     this.yesterday.setDate(today.getDate() - 1);
   }
   ngOnInit(){
-    this.fetchMainProductsDeposit();
+    this.fetchDepositSum();
+    this.fetchSubDepositSumQuery();
   }
   
 
@@ -36,13 +38,24 @@ export class DepositComponent {
     this.router.navigate(['/dashboard']); // Replace '/dashboard' with the actual route for your dashboard
   }
 
-  fetchMainProductsDeposit() {
+  fetchDepositSum() {
     this.authService.getDepositSum().subscribe(
       (data: any) => {
         this.mainProductDepositSum = data;
       },
       (error: any) => {
-        console.error('Error fetching customer sum:', error);
+        console.error('Error fetching products sum:', error);
+      }
+    );
+  }
+
+  fetchSubDepositSumQuery() {
+    this.authService.getSubDepositSumQuery().subscribe(
+      (data: any) => {
+        this.subProductDepositSum = data;
+      },
+      (error: any) => {
+        console.error('Error fetching sub products sum:', error);
       }
     );
   }
