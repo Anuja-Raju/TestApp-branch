@@ -74,20 +74,20 @@
     <tr>
       <td>ESAF LCV New Direct
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.LCVNewDireCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.LCVNewDireOs}}</td>
     </tr>
     <tr>
       <td>ESAF LCV LOAN USED
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.LCVLoaUsedCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.LCVLoaUsedOs}}</td>
     </tr>
     <tr>
       <td>ESAF VEHICLE LOAN 2W
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.VehiLoa2WCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.VehiLoa2WOs}}</td>
     </tr>
   </ng-container>
 
@@ -107,14 +107,20 @@
     <tr>
       <td>ESAF BUSINESS LOAN
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.ESAbusiLoCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.ESAbusiLoOs}}</td>
     </tr>
     <tr>
       <td>ESAF BUSINESS LOAN FORTNI
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.ESAbusiLoaFortCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.ESAbusiLoaFortOs}}</td>
+    </tr>
+    <tr>
+      <td>ESAF BUSINESS LOAN WEEKLY
+      </td>
+      <td>{{subProductAdvanceSum.BusiLoaWee}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.BusiLoaWee}}</td>
     </tr>
     
   </ng-container>
@@ -134,8 +140,8 @@
     <tr>
       <td>ESAF NEW CC OD
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.NewCCODCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.NewCCODOs}}</td>
     </tr>     
   </ng-container>
 
@@ -155,8 +161,8 @@
     <tr>
       <td>ESAF GENCLN ENGY PRD MTLY
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.GenEngyPrdMtlyCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.GenEngyPrdMtlyOs}}</td>
     </tr>    
   </ng-container>
 
@@ -178,14 +184,20 @@
     <tr>
       <td>ESAF GOLD LOAN GENERAL
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.ESAgoLoGenCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.ESAgoLoGenOs}}</td>
     </tr>
     <tr>
       <td>ESAF GOLD LOAN 120 DAYS
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.ESAgoLo120Cnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.ESAgoLo120Os}}</td>
+    </tr>
+    <tr>
+      <td>ESAF GOLD LOAN GEN HALF YEALRY
+      </td>
+      <td>{{subProductAdvanceSum.GolLoaGenHalfYrCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.GolLoaGenHalfYrOs}}</td>
     </tr>
   </ng-container>
   
@@ -205,11 +217,10 @@
     <tr>
       <td>ESAF KCC Credit
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.KCCcrediCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.KCCcrediOs}}</td>
     </tr>    
-  </ng-container>
- 
+  </ng-container> 
   <tr>
     <td>
       <button (click)="toggleProducts('Loan Against Deposit')">
@@ -224,14 +235,14 @@
     <tr>
       <td>ESAF LOAN AGAINST TD
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.LoaAgaiTDCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.LoaAgaiTDOs}}</td>
     </tr>    
     <tr>
       <td>ESAF OD-AGAINST-FD
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.ODagaiFDCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.ODagaiFDOs}}</td>
     </tr> 
   </ng-container>
 
@@ -251,22 +262,22 @@
     <tr>
       <td>ESAF LOAN AGAINST PROP
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.LoaAgaiPropCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.LoaAgaiPropOs}}</td>
     </tr>    
     <tr>
       <td>ESAF LAP WEEKLY
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.LapWeekCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.LapWeekOs}}</td>
     </tr> 
     <tr>
       <td>ESAF LAP FORTNIGHTLY
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.LapFortNiCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.LapFortNiOs}}</td>
     </tr>
-  </ng-container>
+</ng-container>
 
 
   <tr>
@@ -284,43 +295,43 @@
   <ng-container *ngIf="isExpanded('Micro Fianance Loan')">
     <tr>
       <td>Income Generation Loan</td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.incGenLoCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.incGenLoOs}}</td>
     </tr>
     <tr>
       <td>Utdhan Loan</td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.UtdhanCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.UtdhanOs}}</td>
     </tr>
     <tr>
       <td>Business Loan AGORA BC
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.BusiLoaAGOBCCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.BusiLoaAGOBCOs}}</td>
     </tr>
     <tr>
       <td> Pratheeksha kiran
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.PratheKirCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.PratheKirOs}}</td>
     </tr>
     <tr>
       <td>Monthly IGL Loan KAMAL
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.monIGLLoaKAMACnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.monIGLLoaKAMAOs}}</td>
     </tr>
     <tr>
       <td>ESAF Income Generation Loan
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.ESAincoGenLoaCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.ESAincoGenLoaOs}}</td>
     </tr>
     <tr>
       <td>ESAF Nano
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.ESAFnanoCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.ESAFnanoOs}}</td>
     </tr>
     <!-- Add more products as needed -->
   </ng-container>
@@ -341,26 +352,26 @@
       <tr>
         <td>ESAF MICRO HOUSING LOAN
         </td>
-        <td></td> <!-- Empty column -->
-        <td></td>
+        <td>{{subProductAdvanceSum.McroHouLoaCnt}}</td> <!-- Empty column -->
+        <td>{{subProductAdvanceSum.McroHouLoaOs}}</td>
       </tr>
       <tr>
         <td>ESAF MICRO HOUSING WEEKLY 
         </td>
-        <td></td> <!-- Empty column -->
-        <td></td>
+        <td>{{subProductAdvanceSum.McroHouLoaWeekCnt}}</td> <!-- Empty column -->
+        <td>{{subProductAdvanceSum.McroHouLoaWeekOs}}</td>
       </tr>
       <tr>
         <td>ESAF MICRO HOUSING FORTNI
         </td>
-        <td></td> <!-- Empty column -->
-        <td></td>
+        <td>{{subProductAdvanceSum.MicroHouFortCnt}}</td> <!-- Empty column -->
+        <td>{{subProductAdvanceSum.MicroHouFortCnt}}</td>
       </tr>
       <tr>
         <td>ESAF DREAM HOME LOAN
         </td>
-        <td></td> <!-- Empty column -->
-        <td></td>
+        <td>{{subProductAdvanceSum.DreHoLoaCnt}}</td> <!-- Empty column -->
+        <td>{{subProductAdvanceSum.DreHoLoaCnt}}</td>
       </tr>
       <tr>
         <td>ESAF AHL-MONTHLY
@@ -387,36 +398,34 @@
       <tr>
         <td>ESAF PERSONAL LOAN WEEKLY
         </td>
-        <td></td> <!-- Empty column -->
-        <td></td>
+        <td>{{subProductAdvanceSum.PerLoaWeeCnt}}</td> <!-- Empty column -->
+        <td>{{subProductAdvanceSum.PerLoaWeeOs}}</td>
       </tr>
       <tr>
         <td>ESAF PERSONAL LOAN FORTNI
         </td>
-        <td></td> <!-- Empty column -->
-        <td></td>
+        <td>{{subProductAdvanceSum.PerLoaFortniCnt}}</td> <!-- Empty column -->
+        <td>{{subProductAdvanceSum.PerLoaFortniOs}}</td>
       </tr>
       <tr>
         <td>ESAF PERSONAL LOAN MTH
         </td>
-        <td></td> <!-- Empty column -->
-        <td></td>
+        <td>{{subProductAdvanceSum.PerLoaMthCnt}}</td> <!-- Empty column -->
+        <td>{{subProductAdvanceSum.PerLoaMthOs}}</td>
       </tr>
       <tr>
         <td>ESAF PERSONAL LOAN
         </td>
-        <td></td> <!-- Empty column -->
-        <td></td>
+        <td>{{subProductAdvanceSum.PerLoaCnt}}</td> <!-- Empty column -->
+        <td>{{subProductAdvanceSum.PerLoaOs}}</td>
       </tr>
       <tr>
         <td>ESAF Salary Overdraft 
         </td>
-        <td></td> <!-- Empty column -->
-        <td></td>
+        <td>{{subProductAdvanceSum.SalOverCnt}}</td> <!-- Empty column -->
+        <td>{{subProductAdvanceSum.SalOverOs}}</td>
       </tr>
     </ng-container>
-
-    
   <tr>
     <td>
       <button (click)="toggleProducts('Term Loan')">
@@ -433,8 +442,8 @@
     <tr>
       <td>ESAF Term Loan
       </td>
-      <td></td> <!-- Empty column -->
-      <td></td>
+      <td>{{subProductAdvanceSum.TermLoaCnt}}</td> <!-- Empty column -->
+      <td>{{subProductAdvanceSum.TermLoaOs}}</td>
     </tr>    
   </ng-container>
 
