@@ -10,9 +10,5 @@ export class AppbarComponent {
    
   constructor(private router: Router) {}
 
-  logout() {
-    // Perform any additional logout logic if needed
-    // For now, simply navigate to the login page
-    this.router.navigate(['/login']);
-  }
+  
 }

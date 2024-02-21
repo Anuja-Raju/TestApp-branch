@@ -7,12 +7,12 @@
 
 .light-red {
   background-color: #bd4141; /* Light red color */
-  height: 45px; /* Adjust the height as needed */
+  height: 56px; /* Adjust the height as needed */
 }
 
 .dark-blue {
   background-color: #103961; /* Dark blue color */
-  height: 30px; /* Adjust the height as needed */
+  height: 40px; /* Adjust the height as needed */
 }
 
 .light-blue {
@@ -25,13 +25,15 @@
 }
 
 .logo-image {
-  width: 100px;
-  height: 40px;
+  width: 130px;
+  height: 43px;
+  padding-top: 8px;
+  padding-left: 25px;
 }
 
 .logout-button {
   width: 60px;
-  background-color: #103961;
+  background-color: #a32424;
   color: white;
   
 }

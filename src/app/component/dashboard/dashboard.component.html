@@ -1,49 +1,77 @@
-<!-- dashboard.component.html -->
 <div class="dashboard-container">
-
-  <!-- Daily Business Snapshot Header in the center -->
-  <h2 class="center-text">Daily Business Snapshot - {{ today }}</h2>
-
-  <input type="text" placeholder="Filter/Search" [(ngModel)]="filterText" (input)="onFilterInputChange()">
-
-  <!-- List of Tiles displayed horizontally -->
-  <div class="tile-list-horizontal">
-    <!-- Tile for Total Deposit -->
-    <div class="tile">
-      <h3>Total Deposits</h3>
-      <p>{{ totalDepositAmount | currency:'INR':'symbol':'1.2-2' }}</p>
-    </div>
-
-    <!-- Tile for Total Advance -->
-    <div class="tile">
-      <h3>Total Advances</h3>
-      <p>{{ totalAdvanceAmount | currency:'INR':'symbol':'1.2-2' }}</p>
-    </div>
-
-    <!-- Tile for Total Business -->
-    <div class="tile">
-      <h3>Total Business</h3>
-      <p>{{ totalBusinessAmount | currency:'INR':'symbol':'1.2-2' }}</p>
-    </div>
+  <!-- Tabs -->
+  <div class="tab">
+    <button class="tablinks" (click)="openTab($event, 'dailySnapshot')" [class.active]="currentTab === 'dailySnapshot'">Daily Business</button>
+    <button class="tablinks" (click)="openTab($event, 'products')" [class.active]="currentTab === 'products'">Products</button>
+    <button class="tablinks" (click)="openTab($event, 'filters')" [class.active]="currentTab === 'filters'">Filters</button>
   </div>
+
+  <!-- Tab content -->
+  <div id="dailySnapshot" class="tabcontent" [ngStyle]="{ display: currentTab === 'dailySnapshot' ? 'block' : 'none' }">
+    <h2 class="center-text">Daily Business Snapshot - {{ today }}</h2>
   
-<app-customer></app-customer>
-  <!-- Dropdown for selecting deposit or advance -->
- <!-- Dropdown for selecting deposit or advance -->
- <div class="dropdown-container">
-  <select class="custom-dropdown" [(ngModel)]="selectedOption" (change)="onSelectChange()">
-    <option value="" disabled selected>Select</option>
-    <option value="deposit">Deposit</option>
-    <option value="advance">Advance</option>
-  </select>
-  <br>
-  <div *ngIf="selectedOption === 'deposit'">
-    <!-- Include the deposit table here -->
-    <app-deposit></app-deposit>
+    <!-- List of Tiles displayed horizontally -->
+    <div class="tile-list-horizontal">
+      <!-- Tile for Total Deposit -->
+      <div class="tile">
+        <h3>Total Deposits</h3>
+        <p>{{ totalDepositAmount | currency:'INR':'symbol':'1.2-2' }}</p>
+      </div>
+  
+      <!-- Tile for Total Advance -->
+      <div class="tile">
+        <h3>Total Advances</h3>
+        <p>{{ totalAdvanceAmount | currency:'INR':'symbol':'1.2-2' }}</p>
+      </div>
+  
+      <!-- Tile for Total Business -->
+      <div class="tile">
+        <h3>Total Business</h3>
+        <p>{{ totalBusinessAmount | currency:'INR':'symbol':'1.2-2' }}</p>
+      </div>
+    </div>
+  
+    <app-customer></app-customer>
   </div>
-  <div *ngIf="selectedOption === 'advance'">
-    <!-- Include the deposit table here -->
-    <app-advance></app-advance>
+
+  <div id="products" class="tabcontent" [ngStyle]="{ display: currentTab === 'products' ? 'block' : 'none' }"><br>
+    <br>
+    <!-- Radio buttons for selecting deposit or advance -->
+    <div class="radio-container">
+      <label><input type="radio" name="depositAdvanceOption" [(ngModel)]="selectedOption" value="deposit"> Deposit</label>
+      <label><input type="radio" name="depositAdvanceOption" [(ngModel)]="selectedOption" value="advance"> Advance</label>
+    </div>
+    
+  
+    <!-- Display selected option content -->
+    <div *ngIf="selectedOption === 'deposit'">
+      <!-- Include the deposit table here -->
+      <app-deposit></app-deposit>
+    </div>
+    <div *ngIf="selectedOption === 'advance'">
+      <!-- Include the advance table here -->
+      <app-advance></app-advance>
+    </div>
   </div>
-</div>
+
+  <div id="filters" class="tabcontent" [ngStyle]="{ display: currentTab === 'filters' ? 'block' : 'none' }"><br>
+    <br>
+    <!-- Filter container -->
+    <div class="filter-container">
+      <div class="filter-input">
+        <input type="text" placeholder=" Branch" [(ngModel)]="branchFilter">
+      </div>
+      <div class="filter-input">
+        <input type="text" placeholder=" Branch ID" [(ngModel)]="branchIdFilter">
+      </div>
+      <div class="filter-input">
+        <input type="text" placeholder=" Product" [(ngModel)]="productFilter">
+      </div>
+    </div>
+    <br>
+      <div class="filter-input">
+        <button class="filter-button" (click)="applyFilters()">Apply Filters</button>
+      </div>
+    
+  </div>
 </div>

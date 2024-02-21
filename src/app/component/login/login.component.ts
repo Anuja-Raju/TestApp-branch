@@ -25,9 +25,7 @@ export class LoginComponent {
   togglePassword() {
     this.showPassword = !this.showPassword;
   }
-  login(){
-    this.router.navigate(['/dashboard']);
-  }
+ 
 
  
   // login() {
@@ -61,6 +59,10 @@ export class LoginComponent {
   //     },
   //   });
   // }
+
+  login(){
+    this.router.navigate(['/dashboard']);
+  }
 
   validateCaptcha(): boolean {
     return this.enteredCaptcha.toLowerCase() === this.captchaImage.toLowerCase();

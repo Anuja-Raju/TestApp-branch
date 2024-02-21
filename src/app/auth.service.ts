@@ -9,13 +9,14 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://192.168.25.106:3000/'; 
+  private apiUrl = 'http://192.168.26.39:3000/'; 
   getCustomerSumPrevY: any;
   getProductsForCategory: any;
   getmainProductAdvanceSum:any;
   getmainProductDepositSum:any;
   getsubProductDepositSum:any;
   getsubProductAdvanceSum: any;
+  getadvanceProductNames:any;
 
   constructor(private http: HttpClient) {}
 
@@ -63,6 +64,16 @@ getSubDepositSumQuery(): Observable<any> {
 getSubAdvanceSumQuery (): Observable<any> {
   return this.http.get(`${this.apiUrl}subProductAdvanceSum`);
 }
+
+
+getAdvanceProductNames (): Observable<any> {
+  return this.http.get(`${this.apiUrl}advanceProductNames`);
+}
+
+getFilteredAdvanceData(userInput: string): Observable<any> {
+  return this.http.post(`${this.apiUrl}filteredAdvanceData?userInput=${userInput}`, {});
+}
+
 
 }
  

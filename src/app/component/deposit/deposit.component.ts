@@ -13,12 +13,14 @@ export class DepositComponent {
   mainProductDepositSum: any;
   subProductDepositSum: any;
 
+  
+
   constructor(private router: Router, private authService: AuthService) {
-    // Calculate yesterday's date
     const today = new Date();
     this.yesterday = new Date(today);
     this.yesterday.setDate(today.getDate() - 1);
   }
+  
   ngOnInit(){
     this.fetchDepositSum();
     this.fetchSubDepositSumQuery();

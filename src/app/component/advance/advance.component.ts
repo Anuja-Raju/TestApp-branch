@@ -12,6 +12,7 @@ export class AdvanceComponent implements OnInit{
   expandedProducts: { [key: string]: boolean } = {};
   mainProductAdvanceSum: any;
   subProductAdvanceSum: any;
+  advanceProductNames: any;
 
   constructor(private authService: AuthService) {
     // Calculate yesterday's date
@@ -23,6 +24,7 @@ export class AdvanceComponent implements OnInit{
   ngOnInit(){
     this.fetchMainProductsAdvance();
     this.fetchSubAdvanceSumQuery();
+    this.fetchAdvanceProductNames();
   }
   
 
@@ -66,4 +68,15 @@ export class AdvanceComponent implements OnInit{
     );
   }
 
+  fetchAdvanceProductNames() {
+    this.authService.getAdvanceProductNames().subscribe(
+      (data: any) => {
+        this.advanceProductNames = data;
+      },
+      (error: any) => {
+        console.error('Error fetching products name:', error);
+      }
+    );
+  }
+  
 }

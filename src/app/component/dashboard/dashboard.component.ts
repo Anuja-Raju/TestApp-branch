@@ -1,9 +1,8 @@
 // dashboard.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { AuthService } from '../../auth.service';
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,55 +12,45 @@ import { AuthService } from '../../auth.service';
 export class DashboardComponent implements OnInit {
   selectedOption: string = '';
   today: string = '';
-  totalDepositAmount: number = 0; // Example value, replace with actual data
-  totalAdvanceAmount: number = 0; // Example value, replace with actual data
-  totalBusinessAmount: number = 0; // Example value, replace with actual data
-  filterText: string = ''; // property to store filter text
-  
+  totalDepositAmount: number = 0;
+  totalAdvanceAmount: number = 0;
+  totalBusinessAmount: number = 0;
+  filterText: string = '';
+  stateFilter: string = '';
+  districtFilter: string = '';
+  clusterFilter: string = '';
+  branchFilter: string = '';
+  branchIdFilter: string = '';
+  productFilter: string = '';
+  filteredDepositData: any[] = [];
+  filteredAdvanceData: any[] = [];
+  currentTab: string = 'dailySnapshot';
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private http: HttpClient
+  ) {}
 
   ngOnInit() {
     this.updateDate();
 
     // Fetch total deposit and total advance amounts
     this.authService.getTotalDeposit().subscribe(
-      (      data: { deposit_total: number; }[]) => {
+      (data: { deposit_total: number; }[]) => {
         this.totalDepositAmount = data[0].deposit_total;
       },
-      (      error: any) => {
+      (error: any) => {
         console.error('Error fetching total deposit:', error);
       }
     );
 
     this.authService.getTotalAdvance().subscribe(
-      (      data: { advance_total: number; }[]) => {
+      (data: { advance_total: number; }[]) => {
         this.totalAdvanceAmount = data[0].advance_total;
       },
-      (      error: any) => {
-        console.error('Error fetching total advance:', error);
-      }
-    );
-
-    this.authService.getTotalDeposit().subscribe(
-      (data: { deposit_total: number }[]) => {
-        this.totalDepositAmount = data[0].deposit_total;
-    
-        // After fetching total deposit, fetch total advance
-        this.authService.getTotalAdvance().subscribe(
-          (advanceData: { advance_total: number }[]) => {
-            this.totalAdvanceAmount = advanceData[0].advance_total;
-    
-            // Calculate totalBusinessAmount
-            this.totalBusinessAmount = this.totalDepositAmount + this.totalAdvanceAmount;
-          },
-          (advanceError: any) => {
-            console.error('Error fetching total advance:', advanceError);
-          }
-        );
-      },
       (error: any) => {
-        console.error('Error fetching total deposit:', error);
+        console.error('Error fetching total advance:', error);
       }
     );
 
@@ -70,6 +59,7 @@ export class DashboardComponent implements OnInit {
       this.updateDate();
     }, 86400000); // 24 hours in milliseconds
   }
+
   updateDate() {
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
@@ -92,11 +82,51 @@ export class DashboardComponent implements OnInit {
   }
 
   onFilterInputChange(): void {
-    // Implement your logic to filter based on the input
-    // For example, you can filter an array of items or perform an API request with the filterText
     console.log('Filter Text:', this.filterText);
     // Implement your logic here to filter or search based on this.filterText
   }
-  
-}
 
+  applyFilters(): void {
+    const filters = {
+      branch: this.branchFilter,
+      branchId: this.branchIdFilter,
+      product: this.productFilter
+    };
+
+    this.http.post('/filteredAdvanceData', filters)
+      .subscribe(
+        (data: any) => {
+          this.filteredAdvanceData = data;
+        },
+        (error: any) => {
+          console.error('Error applying filters:', error);
+        }
+      );
+  }
+
+  openNav() {
+    const sidenav = document.getElementById("mySidenav");
+    if (sidenav) {
+      sidenav.style.width = "250px";
+    }
+  }
+  
+  closeNav() {
+    const sidenav = document.getElementById("mySidenav");
+    if (sidenav) {
+      sidenav.style.width = "0";
+    }
+  }
+  
+  logout() {
+    this.router.navigate(['/login']);
+  }
+
+  dashboard() {
+    this.router.navigate(['/dashboard']);
+  }
+
+  openTab(event: Event, tabName: string) {
+    this.currentTab = tabName;
+  }
+}
