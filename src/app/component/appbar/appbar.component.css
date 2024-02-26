@@ -5,13 +5,13 @@
   flex-direction: column;
 }
 
-.light-red {
-  background-color: #bd4141; /* Light red color */
-  height: 56px; /* Adjust the height as needed */
+.dark-blue {
+  background-color: #103961; /* Light red color */
+  height: 50px; /* Adjust the height as needed */
 }
 
-.dark-blue {
-  background-color: #103961; /* Dark blue color */
+.white {
+  background-color: white; /* Dark blue color */
   height: 40px; /* Adjust the height as needed */
 }
 
@@ -23,17 +23,51 @@
   align-items: center;
   padding-right: 16px; /* Add right padding to the light-blue bar */
 }
-
+.red{
+  background-color: rgb(166, 65, 65);
+  height: 56px;
+}
 .logo-image {
-  width: 130px;
-  height: 43px;
+  width: 105px;
+  height: 30px;
   padding-top: 8px;
   padding-left: 25px;
 }
 
+
 .logout-button {
-  width: 60px;
-  background-color: #a32424;
-  color: white;
-  
+  position: absolute;
+  top: 7px;
+  right: 21px;
+  width: 25px;
+  height: 25px;
+  background-color:white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:  #d0262d;
+  font-size: 13px;
+  border:none;
+}
+
+.user-container {
+  position: relative;
+  width: 200px; /* Width of the container, adjust as needed */
+  height: 150px; /* Height of the container, adjust as needed */
+}
+
+.user-icon {
+  position: absolute;
+  top: 7px;
+  right: 61px;
+  width: 25px;
+  height: 25px;
+  background-color:white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:  #bd4141;
+  font-size: 13px;
 }

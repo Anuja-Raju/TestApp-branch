@@ -1,11 +1,24 @@
 <!-- app.component.html -->
 
 <div class="app-bar">
-  <div class="light-red">
-    <div class="dark-blue">
+  <div class="red">
+  <div class="dark-blue">
+
+    <div class="white">
+      
       <img src="assets/esaflogo.png" class="logo-image" alt="ESAF Logo">
     </div>
   </div>
-  <div class="light-blue">
   </div>
+  <div class="light-blue">
+    <div class="user-container">
+      <div class="user-icon">
+        <i class="fas fa-user"></i> 
+      </div>
+      <button class="logout-button" (click)="logout()">
+        <i class="fas fa-power-off"></i> 
+      </button>
+    </div>
+  </div>
+  
 </div>
