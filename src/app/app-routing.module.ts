@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'filteredAdvanceDataByBranchName', component: DashboardComponent },
 ];
 
 @NgModule({

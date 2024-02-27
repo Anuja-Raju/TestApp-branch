@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
+ 
 
   private apiUrl = 'http://192.168.26.39:3000/'; 
   getCustomerSumPrevY: any;
@@ -17,6 +18,7 @@ export class AuthService {
   getsubProductDepositSum:any;
   getsubProductAdvanceSum: any;
   getadvanceProductNames:any;
+  getUserId: any;
 
   constructor(private http: HttpClient) {}
 
@@ -70,10 +72,9 @@ getAdvanceProductNames (): Observable<any> {
   return this.http.get(`${this.apiUrl}advanceProductNames`);
 }
 
-getFilteredAdvanceData(userInput: string): Observable<any> {
-  return this.http.post(`${this.apiUrl}filteredAdvanceData?userInput=${userInput}`, {});
+filteredAdvanceDataByBranchName(userInput: string): Observable<any> {
+  return this.http.post(`${this.apiUrl}filteredAdvanceDataByBranchName`, { branchName: userInput });
 }
-
 
 }
  

@@ -31,6 +31,7 @@ import { CustomerComponent } from './component/customer/customer.component';
     DepositComponent,
     AdvanceComponent,
     CustomerComponent,
+
   ],
   imports: [
     BrowserModule,

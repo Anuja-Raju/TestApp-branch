@@ -59,7 +59,7 @@
     <!-- Filter container -->
     <div class="filter-container">
       <div class="filter-input">
-        <input type="text" placeholder=" Branch" [(ngModel)]="branchFilter">
+        <input type="text" placeholder=" Branch" [(ngModel)]="branchName">
       </div>
       <div class="filter-input">
         <input type="text" placeholder=" Branch ID" [(ngModel)]="branchIdFilter">
@@ -74,4 +74,17 @@
       </div>
     
   </div>
+
+  <div class="container">
+    
+    <div *ngFor="let branch of branchData" class="branch-item">
+        <h2>{{ branch.BRANCH_NAME }}</h2>
+        <div class="branch-details">
+            <div *ngFor="let key of branchKeys" class="detail">
+                <strong>{{ key }}:</strong> {{ branch[key] }}
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
