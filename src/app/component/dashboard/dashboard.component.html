@@ -9,7 +9,6 @@
   <!-- Tab content -->
   <div id="dailySnapshot" class="tabcontent" [ngStyle]="{ display: currentTab === 'dailySnapshot' ? 'block' : 'none' }">
     <h2 class="center-text">Daily Business Snapshot - {{ today }}</h2>
-  
     <!-- List of Tiles displayed horizontally -->
     <div class="tile-list-horizontal">
       <!-- Tile for Total Deposit -->
@@ -17,32 +16,28 @@
         <h3>Total Deposits</h3>
         <p>{{ totalDepositAmount | currency:'INR':'symbol':'1.2-2' }}</p>
       </div>
-  
       <!-- Tile for Total Advance -->
       <div class="tile">
         <h3>Total Advances</h3>
         <p>{{ totalAdvanceAmount | currency:'INR':'symbol':'1.2-2' }}</p>
       </div>
-  
       <!-- Tile for Total Business -->
       <div class="tile">
         <h3>Total Business</h3>
         <p>{{ totalBusinessAmount | currency:'INR':'symbol':'1.2-2' }}</p>
       </div>
     </div>
-  
     <app-customer></app-customer>
   </div>
 
-  <div id="products" class="tabcontent" [ngStyle]="{ display: currentTab === 'products' ? 'block' : 'none' }"><br>
+  <div id="products" class="tabcontent" [ngStyle]="{ display: currentTab === 'products' ? 'block' : 'none' }">
+    <br>
     <br>
     <!-- Radio buttons for selecting deposit or advance -->
     <div class="radio-container">
       <label><input type="radio" name="depositAdvanceOption" [(ngModel)]="selectedOption" value="deposit"> Deposit</label>
       <label><input type="radio" name="depositAdvanceOption" [(ngModel)]="selectedOption" value="advance"> Advance</label>
     </div>
-    
-  
     <!-- Display selected option content -->
     <div *ngIf="selectedOption === 'deposit'">
       <!-- Include the deposit table here -->
@@ -54,7 +49,8 @@
     </div>
   </div>
 
-  <div id="filters" class="tabcontent" [ngStyle]="{ display: currentTab === 'filters' ? 'block' : 'none' }"><br>
+  <div id="filters" class="tabcontent" [ngStyle]="{ display: currentTab === 'filters' ? 'block' : 'none' }">
+    <br>
     <br>
     <!-- Filter container -->
     <div class="filter-container">
@@ -69,22 +65,36 @@
       </div>
     </div>
     <br>
-      <div class="filter-input">
-        <button class="filter-button" (click)="applyFilters()">Apply Filters</button>
-      </div>
-    
-  </div>
-
-  <div class="container">
-    
-    <div *ngFor="let branch of branchData" class="branch-item">
-        <h2>{{ branch.BRANCH_NAME }}</h2>
-        <div class="branch-details">
-            <div *ngFor="let key of branchKeys" class="detail">
-                <strong>{{ key }}:</strong> {{ branch[key] }}
-            </div>
-        </div>
+    <div class="filter-input">
+      <button class="filter-button" (click)="applyFilters()">Apply Filters</button>
     </div>
-</div>
-
-</div>
+  
+    <!-- Container for the table -->
+    <div class="filtered-data-container">
+      <!-- Table to display filtered data -->
+      <table class="filtered-data-table" *ngIf="filteredAdvanceDataByBranchName.length > 0">
+        <thead>
+          <tr>
+            <th>Branch Id</th>
+            <th>Branch Name</th>
+            <th>Product Grouping</th>
+            <th>Product Type Description</th>
+            <th>OS</th>
+            <th>Count</th>
+            <!-- Add more columns as needed -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of filteredAdvanceDataByBranchName">
+            <td>{{ item.BRANCH_ID }}</td>
+            <td>{{ item.BRANCH_NAME }}</td>
+            <td>{{ item.PRODUCT_GRPING }}</td>
+            <td>{{ item.PROD_TYP_DESC }}</td>
+            <td>{{ item.OS_FTD }}</td>
+            <td>{{ item.CNT_FTD }}</td>
+            <!-- Add more columns as needed -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

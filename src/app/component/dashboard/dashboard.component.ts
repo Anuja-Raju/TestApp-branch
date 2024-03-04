@@ -1,4 +1,4 @@
-// dashboard.component.ts
+// Import necessary modules and services
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
@@ -10,23 +10,20 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  // Define necessary variables
   selectedOption: string = '';
   today: string = '';
   totalDepositAmount: number = 0;
   totalAdvanceAmount: number = 0;
   totalBusinessAmount: number = 0;
-  filterText: string = '';
-  stateFilter: string = '';
-  districtFilter: string = '';
-  clusterFilter: string = '';
   branchName: string = '';
-  branchIdFilter: string = '';
-  productFilter: string = '';
-  filteredDepositData: any[] = [];
-  filteredAdvanceData: any[] = [];
+  filteredAdvanceDataByBranchName: any[] = [];
   currentTab: string = 'dailySnapshot';
   branchData: any[] = [];
   branchKeys: string[] = [];
+  displayedColumns: string[] = ['BRANCH_NAME','PRODUCT_GRPING','PROD_TYP_DESC', 'OS_FTD', 'CNT_FTD']; // Define columns to display in the table
+  productFilter: string = ''; // Declare the productFilter property here
+  branchIdFilter: string = ''; // Declare the branchIdFilter property here
 
   constructor(
     private router: Router,
@@ -37,7 +34,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.updateDate();
     this.fetchBranchData();
-
     // Fetch total deposit and total advance amounts
     this.authService.getTotalDeposit().subscribe(
       (data: { deposit_total: number; }[]) => {
@@ -60,12 +56,12 @@ export class DashboardComponent implements OnInit {
     this.authService.getTotalDeposit().subscribe(
       (data: { deposit_total: number }[]) => {
         this.totalDepositAmount = data[0].deposit_total;
-    
+
         // After fetching total deposit, fetch total advance
         this.authService.getTotalAdvance().subscribe(
           (advanceData: { advance_total: number }[]) => {
             this.totalAdvanceAmount = advanceData[0].advance_total;
-    
+
             // Calculate totalBusinessAmount
             this.totalBusinessAmount = this.totalDepositAmount + this.totalAdvanceAmount;
           },
@@ -78,7 +74,6 @@ export class DashboardComponent implements OnInit {
         console.error('Error fetching total deposit:', error);
       }
     );
-
 
     // Update the date every day at midnight
     setInterval(() => {
@@ -107,61 +102,61 @@ export class DashboardComponent implements OnInit {
     // Handle other options if needed
   }
 
-  onFilterInputChange(): void {
-    console.log('Filter Text:', this.filterText);
-    // Implement your logic here to filter or search based on this.filterText
-  }
-
+  // Function to handle applying filters
   applyFilters(): void {
     const filters = {
       branchName: this.branchName,
-      // branchId: this.branchIdFilter,
-      // product: this.productFilter
+      branchId: this.branchIdFilter,
+      product: this.productFilter
     };
 
-    this.http.post('/filteredAdvanceDataByBranchName', filters)
-      .subscribe(
-        (data: any) => {
-          this.filteredAdvanceData = data;
-        },
-        (error: any) => {
-          console.error('Error applying filters:', error);
-        }
-      );
+    this.authService.filteredAdvanceDataByBranchName(this.branchName).subscribe(
+      (data: any[]) => {
+        this.filteredAdvanceDataByBranchName = data; // Store filtered data
+      },
+      (error: any) => {
+        console.error('Error applying filters:', error);
+        // Handle error
+      }
+    );
   }
 
+  // Function to open navigation sidebar
   openNav() {
     const sidenav = document.getElementById("mySidenav");
     if (sidenav) {
       sidenav.style.width = "250px";
     }
   }
-  
+
+  // Function to close navigation sidebar
   closeNav() {
     const sidenav = document.getElementById("mySidenav");
     if (sidenav) {
       sidenav.style.width = "0";
     }
   }
-  
+
+  // Function to logout
   logout() {
     this.router.navigate(['/login']);
   }
 
+  // Function to navigate to dashboard
   dashboard() {
     this.router.navigate(['/dashboard']);
   }
 
+  // Function to switch tabs
   openTab(event: Event, tabName: string) {
     this.currentTab = tabName;
   }
 
-
-
+  // Function to fetch mock branch data
   fetchBranchData() {
     // Mocking branch data
     this.branchData = [
-      // Response data here
+      // Your branch data here
     ];
 
     // Extracting keys dynamically

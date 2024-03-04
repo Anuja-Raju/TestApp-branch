@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
  
 
-  private apiUrl = 'http://192.168.26.39:3000/'; 
+  private apiUrl = 'http://10.0.0.79:3001/'; 
   getCustomerSumPrevY: any;
   getProductsForCategory: any;
   getmainProductAdvanceSum:any;

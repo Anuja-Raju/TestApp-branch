@@ -228,6 +228,64 @@ input[type="text"] {
 }
 
 
+ 
+/* Style for the filter container */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 70px;
+}
+
+.filter-input {
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.filter-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.filter-button:hover {
+  background-color: #115615;
+}
+
+/* Style for the filtered data container */
+.filtered-data-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.filtered-data-table {
+  width: 80%;
+  border-collapse: collapse;
+  border: 1px solid #ddd; /* Add border to the table */
+  margin-top: 20px;
+}
+
+.filtered-data-table th,
+.filtered-data-table td {
+  border: 1px solid #ddd; /* Add border to table cells */
+  padding: 8px;
+  text-align: left;
+}
+
+.filtered-data-table th {
+  background-color: #f2f2f2;
+}
+
+
+
+
 
 
 @media only screen and (max-width: 600px) {
@@ -306,5 +364,32 @@ input[type="text"] {
   display: none;
   padding: 20px 12px;
 }
+
+.filtered-data-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Align content vertically */
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.filtered-data-table {
+  width: 80%; /* Adjust width as needed */
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.filtered-data-table th,
+.filtered-data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.filtered-data-table th {
+  background-color: #f2f2f2;
+}
+
 
 }
