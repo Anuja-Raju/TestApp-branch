@@ -72,8 +72,8 @@ getAdvanceProductNames (): Observable<any> {
   return this.http.get(`${this.apiUrl}advanceProductNames`);
 }
 
-filteredAdvanceDataByBranchName(userInput: string): Observable<any> {
-  return this.http.post(`${this.apiUrl}filteredAdvanceDataByBranchName`, { branchName: userInput });
+filteredAdvanceData(filters: any): Observable<any> {
+  return this.http.post(`${this.apiUrl}filteredAdvanceData`,filters);
 }
 
 }

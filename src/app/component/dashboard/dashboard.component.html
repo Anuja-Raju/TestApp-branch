@@ -72,7 +72,7 @@
     <!-- Container for the table -->
     <div class="filtered-data-container">
       <!-- Table to display filtered data -->
-      <table class="filtered-data-table" *ngIf="filteredAdvanceDataByBranchName.length > 0">
+      <table class="filtered-data-table" *ngIf="filteredAdvanceData.length > 0">
         <thead>
           <tr>
             <th>Branch Id</th>
@@ -85,7 +85,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of filteredAdvanceDataByBranchName">
+          <tr *ngFor="let item of filteredAdvanceData">
             <td>{{ item.BRANCH_ID }}</td>
             <td>{{ item.BRANCH_NAME }}</td>
             <td>{{ item.PRODUCT_GRPING }}</td>
@@ -97,4 +97,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+    <!-- Display filtered data not found message -->
+<p *ngIf="filteredDataMessage" class=filteredDataMessage>{{ filteredDataMessage }}</p>
+
+  </div>  

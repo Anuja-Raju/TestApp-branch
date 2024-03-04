@@ -17,13 +17,14 @@ export class DashboardComponent implements OnInit {
   totalAdvanceAmount: number = 0;
   totalBusinessAmount: number = 0;
   branchName: string = '';
-  filteredAdvanceDataByBranchName: any[] = [];
+  filteredAdvanceData: any[] = [];
   currentTab: string = 'dailySnapshot';
   branchData: any[] = [];
   branchKeys: string[] = [];
   displayedColumns: string[] = ['BRANCH_NAME','PRODUCT_GRPING','PROD_TYP_DESC', 'OS_FTD', 'CNT_FTD']; // Define columns to display in the table
-  productFilter: string = ''; // Declare the productFilter property here
-  branchIdFilter: string = ''; // Declare the branchIdFilter property here
+  productFilter: string = ''; 
+  branchIdFilter: string = ''; 
+  filteredDataMessage!: string;
 
   constructor(
     private router: Router,
@@ -110,9 +111,10 @@ export class DashboardComponent implements OnInit {
       product: this.productFilter
     };
 
-    this.authService.filteredAdvanceDataByBranchName(this.branchName).subscribe(
+    this.authService.filteredAdvanceData(filters).subscribe(
       (data: any[]) => {
-        this.filteredAdvanceDataByBranchName = data; // Store filtered data
+        this.filteredAdvanceData = data; 
+        this.filteredDataMessage = data.length === 0 ? 'No data found.' : '';
       },
       (error: any) => {
         console.error('Error applying filters:', error);
