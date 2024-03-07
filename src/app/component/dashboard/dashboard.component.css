@@ -193,15 +193,6 @@ input[type="text"] {
   margin-right: 20px; 
 }
 
-
-
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 .branch-item {
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -263,10 +254,13 @@ input[type="text"] {
   align-items: center;
   flex-direction: column;
   margin-top: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  width: 100%; /* Ensure the container takes full width */
 }
 
+
 .filtered-data-table {
-  width: 80%;
+  width: 100%;
   border-collapse: collapse;
   border: 1px solid #ddd; /* Add border to the table */
   margin-top: 20px;
@@ -275,7 +269,6 @@ input[type="text"] {
 .filtered-data-table th,
 .filtered-data-table td {
   border: 1px solid #ddd; /* Add border to table cells */
-  padding: 8px;
   text-align: left;
 }
 
@@ -372,32 +365,16 @@ input[type="text"] {
   display: none;
   padding: 20px 12px;
 }
-
-.filtered-data-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Align content vertically */
-  margin-top: 20px; /* Adjust margin as needed */
-}
-
 .filtered-data-table {
-  width: 80%; /* Adjust width as needed */
-  border-collapse: collapse;
-  border: 1px solid #ddd;
-  margin-top: 20px; /* Adjust margin as needed */
+  font-size: smaller;
+  padding: 45px;
+  text-align: center;
 }
 
-.filtered-data-table th,
-.filtered-data-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+/* Ensure horizontal scrolling for the filtered data container */
+.filtered-data-container {
+  overflow-x: auto;
+  width: 100%; 
 }
-
-.filtered-data-table th {
-  background-color: #f2f2f2;
-}
-
 
 }
