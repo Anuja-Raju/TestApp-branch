@@ -177,7 +177,7 @@
     .filtered-data-table th,
     .filtered-data-table td {
       padding: 5px; /* Reduce padding */
-      font-size: 10px; /* Reduce font size */
+      font-size: 11px; /* Reduce font size */
     }
     
   .product-table tr:nth-child(odd) td {
