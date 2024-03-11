@@ -52,52 +52,7 @@
   <div id="filters" class="tabcontent" [ngStyle]="{ display: currentTab === 'filters' ? 'block' : 'none' }">
     <br>
     <br>
-    <!-- Filter container -->
-    <div class="filter-container">
-      <div class="filter-input">
-        <input type="text" placeholder=" Branch" [(ngModel)]="branchName">
-      </div>
-      <div class="filter-input">
-        <input type="text" placeholder=" Branch ID" [(ngModel)]="branchIdFilter">
-      </div>
-      <div class="filter-input">
-        <input type="text" placeholder=" Product" [(ngModel)]="productFilter">
-      </div>
-    </div>
-    <br>
-    <div class="filter-input">
-      <button class="filter-button" (click)="applyFilters()">Apply Filters</button>
-    </div>
-  
-    <!-- Container for the table -->
-    <div class="filtered-data-container">
-      <!-- Table to display filtered data -->
-      <table class="filtered-data-table" *ngIf="filteredAdvanceData.length > 0">
-        <thead>
-          <tr>
-            <th>Branch Id</th>
-            <th>Branch Name</th>
-            <th>Product Grouping</th>
-            <th>Product Type Description</th>
-            <th>OS</th>
-            <th>Count</th>
-            <!-- Add more columns as needed -->
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of filteredAdvanceData">
-            <td>{{ item.BRANCH_ID }}</td>
-            <td>{{ item.BRANCH_NAME }}</td>
-            <td>{{ item.PRODUCT_GRPING }}</td>
-            <td>{{ item.PROD_TYP_DESC }}</td>
-            <td>{{ item.OS_FTD }}</td>
-            <td>{{ item.CNT_FTD }}</td>
-            <!-- Add more columns as needed -->
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- Display filtered data not found message -->
-<p *ngIf="filteredDataMessage" class=filteredDataMessage>{{ filteredDataMessage }}</p>
 
+
+  <app-filter></app-filter>
   </div>  

@@ -1,0 +1,201 @@
+
+  input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 281px;
+    box-sizing: border-box;
+  }
+  
+  /* dashboard.component.css */
+  .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 70px;
+  }
+  
+  .filter-input {
+    margin-right: 50px; /* Adjust as needed */
+    margin-left: 50px;
+  }
+  .filter-button {
+    background-color:  #4CAF50; /* Green background */
+    border: none;
+    color: white; /* White text */
+    padding: 10px 5px; /* Padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .filter-button:hover {
+    background-color: #115615; 
+  }
+  
+  .tab {
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  .tab button {
+    background-color: #a32424;
+    border: none;
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 7px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+  
+  }
+  
+  .tab button:hover {
+    background-color: #a32424;
+    color: black; 
+    transform: scale(1.1); 
+    
+  }
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+  }
+  
+  .radio-container label {
+    margin-right: 20px; 
+  }
+  
+  .branch-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .branch-item h2 {
+    margin-top: 0;
+  }
+  
+  .branch-details {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .detail {
+    flex: 1;
+    padding: 5px;
+  }
+  
+  .detail:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  
+   
+  /* Style for the filter container */
+  .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 70px;
+  }
+  
+  .filter-input {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+  
+  .filter-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  
+  .filter-button:hover {
+    background-color: #115615;
+  }
+  
+  /* Style for the filtered data container */
+  .filtered-data-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    width: 100%; /* Ensure the container takes full width */
+  }
+  
+  
+  .filtered-data-table {
+    width: 100%; /* Set table width to fill its container */
+    border-collapse: collapse; /* Collapse table borders */
+  }
+
+.filtered-data-table th,
+.filtered-data-table td {
+  padding: 8px; /* Add padding to table cells */
+  border: 1px solid #dddddd; /* Add borders to table cells */
+}
+  
+  .filtered-data-table th {
+    background-color: #103961;
+    color: white;
+  }
+  
+  .filteredDataMessage{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  
+  .filtered-data-table tr:nth-child(odd) td {
+    background-color: #e2e9eb;
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+  
+    .filtered-data-table th,
+    .filtered-data-table td {
+      padding: 5px; /* Reduce padding */
+      font-size: 10px; /* Reduce font size */
+    }
+    
+  .product-table tr:nth-child(odd) td {
+    background-color: #e2e9eb;
+  }
+   .filtered-data-container {
+    max-width: 90%; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  .filtered-data-table {
+    width: 80%; /* Set table width to fill its container */
+    
+  }
+
+
+  }
+
+
+
+
+  

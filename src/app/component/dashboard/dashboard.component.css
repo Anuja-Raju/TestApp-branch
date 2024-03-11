@@ -73,7 +73,7 @@
 input[type="text"] {
   padding: 10px;
   margin-bottom: 10px;
-  width: 300px;
+  width: 281px;
   box-sizing: border-box;
 }
 
@@ -363,7 +363,7 @@ input[type="text"] {
 
 .tabcontent {
   display: none;
-  padding: 20px 12px;
+  padding: 20px 0px;
 }
 .filtered-data-table {
   font-size: smaller;
@@ -376,5 +376,6 @@ input[type="text"] {
   overflow-x: auto;
   width: 100%; 
 }
+
 
 }
