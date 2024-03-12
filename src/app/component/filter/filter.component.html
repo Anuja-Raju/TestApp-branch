@@ -11,7 +11,12 @@
 </div>
 
   <div class="filter-input">
-    <input type="text" placeholder=" Branch ID" [(ngModel)]="branchIdFilter">
+    <input type="text" placeholder=" Branch ID" [(ngModel)]="branchIdFilter"  (input)="filterBranchIds()">
+    <div *ngIf="branchIdFilter">
+      <select #selectBranchIdElement (change)="onBranchIdFilterChange(selectBranchIdElement.value)">
+          <option *ngFor="let branchId of filteredBranchIds" [value]="branchId">{{ branchId }}</option>
+      </select>
+  </div>
   </div>
   <div class="filter-input">
     <input type="text" placeholder=" Product Name" [(ngModel)]="productFilter">

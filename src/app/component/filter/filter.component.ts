@@ -22,9 +22,12 @@ export class FilterComponent implements OnInit {
   filteredDataMessage!: string;
   allBranches: string[] = [];
   filteredBranches: string[] = [];
+  allBranchIds: string[] = [];
+  filteredBranchIds: string[] = [];
 
   @Output() filterChanged = new EventEmitter<string>();
-
+ 
+  
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -34,6 +37,7 @@ export class FilterComponent implements OnInit {
   ngOnInit(): void {
     this.fetchBranchData(); // Fetch mock branch data
     this.getBranchNames(); // Fetch branch names from the backend
+    this.getBranchIds();
     this.applyFilters();
   }
 
@@ -104,5 +108,36 @@ export class FilterComponent implements OnInit {
     this.filterBranches();
     this.filterChanged.emit(selectedBranch);
 
+  }
+
+
+  getBranchIds(): void {
+    this.authService.getBranchIds().subscribe(
+      (branchIds: string[]) => {
+        this.allBranchIds = branchIds;
+        this.filteredBranchIds = branchIds.slice(); // Initially, show all branch IDs
+      },
+      (error: any) => {
+        console.error('Error fetching branch IDs:', error);
+        // Handle error
+      }
+    );
+  }
+  
+  // Function to filter branch IDs based on user input
+  filterBranchIds(): void {
+    if (this.branchIdFilter.trim() === '') {
+      this.filteredBranchIds = [];
+    } else {
+      this.filteredBranchIds = this.allBranchIds.filter(branchId =>
+        branchId.toLowerCase().startsWith(this.branchIdFilter.toLowerCase())
+      );
+    }
+  }
+  // Function to handle branch ID filter change
+  onBranchIdFilterChange(selectedBranchId: string): void {
+    this.branchIdFilter = selectedBranchId;
+    this.filterBranchIds();
+    this.filterChanged.emit(selectedBranchId);
   }
 }

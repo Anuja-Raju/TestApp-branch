@@ -19,6 +19,7 @@ export class AuthService {
   getsubProductAdvanceSum: any;
   getadvanceProductNames:any;
   getUserId: any;
+ 
 
   constructor(private http: HttpClient) {}
 
@@ -79,6 +80,11 @@ filteredAdvanceData(filters: any): Observable<any> {
 getBranchNames(): Observable<string[]> {
   return this.http.get<string[]>(`${this.apiUrl}branchName`);
 }
+
+getBranchIds(): Observable<string[]> {
+  return this.http.get<string[]>(`${this.apiUrl}branchId`);
+}
+
 
 }
  
