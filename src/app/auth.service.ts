@@ -76,5 +76,9 @@ filteredAdvanceData(filters: any): Observable<any> {
   return this.http.post(`${this.apiUrl}filteredAdvanceData`,filters);
 }
 
+getBranchNames(): Observable<string[]> {
+  return this.http.get<string[]>(`${this.apiUrl}branchName`);
+}
+
 }
  

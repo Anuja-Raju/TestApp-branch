@@ -4,6 +4,7 @@
     margin-bottom: 10px;
     width: 281px;
     box-sizing: border-box;
+    
   }
   
   /* dashboard.component.css */
@@ -113,8 +114,9 @@
   }
   
   .filter-input {
-    margin-right: 50px;
+    margin-right: 0px;
     margin-left: 50px;
+    padding-right: 50px;
   }
   
   .filter-button {
@@ -177,7 +179,7 @@
     .filtered-data-table th,
     .filtered-data-table td {
       padding: 5px; /* Reduce padding */
-      font-size: 11px; /* Reduce font size */
+      font-size: 9px; /* Reduce font size */
     }
     
   .product-table tr:nth-child(odd) td {

@@ -1,13 +1,20 @@
 <!-- Filter container -->
 <div class="filter-container">
-  <div class="filter-input">
-    <input type="text" placeholder=" Branch" [(ngModel)]="branchName">
-  </div>
+  <div class="filter-input" >
+    <input type="text" placeholder="Branch Name" [(ngModel)]="branchName" (input)="filterBranches()">
+  
+<div *ngIf="branchName">
+    <select #selectElement (change)="onFilterChange(selectElement.value)">
+        <option *ngFor="let branch of filteredBranches" [value]="branch">{{ branch }}</option>
+    </select>
+</div>
+</div>
+
   <div class="filter-input">
     <input type="text" placeholder=" Branch ID" [(ngModel)]="branchIdFilter">
   </div>
   <div class="filter-input">
-    <input type="text" placeholder=" Product" [(ngModel)]="productFilter">
+    <input type="text" placeholder=" Product Name" [(ngModel)]="productFilter">
   </div>
 </div>
 <!-- Display "Apply Filters" button -->
@@ -24,6 +31,7 @@
       <tr>
         <th>Branch Id</th>
         <th>Branch Name</th>
+        <th>Product ID</th>
         <th>Product Grouping</th>
         <th>Product Type Description</th>
         <th>OS</th>
@@ -35,6 +43,7 @@
       <tr *ngFor="let item of filteredAdvanceData">
         <td>{{ item.BRANCH_ID }}</td>
         <td>{{ item.BRANCH_NAME }}</td>
+        <td>{{ item.PROD_TYP}}</td>
         <td>{{ item.PRODUCT_GRPING }}</td>
         <td>{{ item.PROD_TYP_DESC }}</td>
         <td>{{ item.OS_FTD }}</td>

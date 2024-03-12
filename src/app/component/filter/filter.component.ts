@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
 import { HttpClient } from '@angular/common/http';
@@ -6,29 +6,35 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.css'] // Corrected styleUrl to styleUrls
+  styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
 
+  branchCheckbox: boolean = false;
   branchName: string = '';
   filteredAdvanceData: any[] = [];
   currentTab: string = 'dailySnapshot';
   branchData: any[] = [];
   branchKeys: string[] = [];
-  displayedColumns: string[] = ['BRANCH_NAME','PRODUCT_GRPING','PROD_TYP_DESC', 'OS_FTD', 'CNT_FTD']; // Define columns to display in the table
+  displayedColumns: string[] = ['BRANCH_NAME','PRODUCT_GRPING','PROD_TYP_DESC', 'OS_FTD', 'CNT_FTD'];
   productFilter: string = ''; 
   branchIdFilter: string = ''; 
   filteredDataMessage!: string;
+  allBranches: string[] = [];
+  filteredBranches: string[] = [];
+
+  @Output() filterChanged = new EventEmitter<string>();
 
   constructor(
     private router: Router,
     private authService: AuthService,
-    private http: HttpClient
+    private http: HttpClient,
   ) {}
 
   ngOnInit(): void {
-    this.fetchBranchData();
-    this.applyFilters(); // Call applyFilters() on component initialization
+    this.fetchBranchData(); // Fetch mock branch data
+    this.getBranchNames(); // Fetch branch names from the backend
+    this.applyFilters();
   }
 
   // Function to handle applying filters
@@ -40,7 +46,7 @@ export class FilterComponent implements OnInit {
     };
 
     this.authService.filteredAdvanceData(filters).subscribe(
-      (data: any[]) => {
+     (data: any[]) => {
         this.filteredAdvanceData = data; 
         this.filteredDataMessage = data.length === 0 ? 'No data found.' : '';
       },
@@ -50,7 +56,7 @@ export class FilterComponent implements OnInit {
       }
     );
   }
-  
+
   // Function to switch tabs
   openTab(event: Event, tabName: string) {
     this.currentTab = tabName;
@@ -67,5 +73,36 @@ export class FilterComponent implements OnInit {
     if (this.branchData.length > 0) {
       this.branchKeys = Object.keys(this.branchData[0]);
     }
+  }
+
+  // Function to fetch branch names from the backend
+  getBranchNames(): void {
+    this.authService.getBranchNames().subscribe(
+      (branches: string[]) => {
+        this.allBranches = branches;
+        this.filteredBranches = branches.slice(); // Initially, show all branches
+      },
+      (error: any) => {
+        console.error('Error fetching branch names:', error);
+        // Handle error
+      }
+    );
+  }
+
+  // Function to filter branches based on user input
+  filterBranches(): void {
+    if (this.branchName.trim() === '') {
+      this.filteredBranches = [];
+    } else {
+      this.filteredBranches = this.allBranches.filter(branch => branch.toLowerCase().includes(this.branchName.toLowerCase()));
+    }
+  }
+
+  // Function to handle filter change
+  onFilterChange(selectedBranch: string): void {
+    this.branchName = selectedBranch;
+    this.filterBranches();
+    this.filterChanged.emit(selectedBranch);
+
   }
 }
