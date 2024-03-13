@@ -24,8 +24,11 @@ export class FilterComponent implements OnInit {
   filteredBranches: string[] = [];
   allBranchIds: string[] = [];
   filteredBranchIds: string[] = [];
+  filteredProducts: string[] = [];
+  allProducts:string[] = [];
 
   @Output() filterChanged = new EventEmitter<string>();
+ 
  
   
   constructor(
@@ -35,9 +38,10 @@ export class FilterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.fetchBranchData(); // Fetch mock branch data
-    this.getBranchNames(); // Fetch branch names from the backend
+    this.fetchBranchData(); 
+    this.getBranchNames(); 
     this.getBranchIds();
+    this.getProducts();
     this.applyFilters();
   }
 
@@ -140,4 +144,35 @@ export class FilterComponent implements OnInit {
     this.filterBranchIds();
     this.filterChanged.emit(selectedBranchId);
   }
+
+  getProducts(): void {
+    this.authService.getProducts().subscribe(
+      (products: string[]) => {
+        this.allProducts = products;
+        this.filteredProducts = products.slice(); 
+      },
+      (error: any) => {
+        console.error('Error fetching products:', error);
+        // Handle error
+      }
+    );
+  }
+  
+  filterProducts(): void {
+    if (this.productFilter.trim() === '') {
+      this.filteredProducts = [];
+    } else {
+      this.filteredProducts = this.allProducts.filter((product: string) =>
+        product.toLowerCase().includes(this.productFilter.toLowerCase())
+      );
+    }
+  }
+  
+  onProductFilterChange(selectedProduct: string): void {
+    this.productFilter = selectedProduct;
+    this.filterProducts();
+    this.filterChanged.emit(selectedProduct);
+  }
+  
+
 }

@@ -19,8 +19,14 @@
   </div>
   </div>
   <div class="filter-input">
-    <input type="text" placeholder=" Product Name" [(ngModel)]="productFilter">
-  </div>
+    <input type="text" placeholder="Product Name" [(ngModel)]="productFilter" (input)="filterProducts()">
+    <div *ngIf="productFilter">
+        <select #selectProductElement (change)="onProductFilterChange(selectProductElement.value)">
+            <option *ngFor="let product of filteredProducts" [value]="product">{{ product }}</option>
+        </select>
+    </div>
+</div>
+
 </div>
 <!-- Display "Apply Filters" button -->
 <div class="filter-input">
