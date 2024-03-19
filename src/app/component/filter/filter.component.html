@@ -1,27 +1,32 @@
 <!-- Filter container -->
 <div class="filter-container">
+
+
   <div class="filter-input" >
     <input type="text" placeholder="Branch Name" [(ngModel)]="branchName" (input)="filterBranches()">
   
-<div *ngIf="branchName">
+<div *ngIf="branchName" class="dropdown">
     <select #selectElement (change)="onFilterChange(selectElement.value)">
+      <option disabled selected>Select Branch</option>
         <option *ngFor="let branch of filteredBranches" [value]="branch">{{ branch }}</option>
     </select>
 </div>
 </div>
 
-  <div class="filter-input">
+  <div class="filter-input" >
     <input type="text" placeholder=" Branch ID" [(ngModel)]="branchIdFilter"  (input)="filterBranchIds()">
-    <div *ngIf="branchIdFilter">
+    <div *ngIf="branchIdFilter" class="dropdown"> 
       <select #selectBranchIdElement (change)="onBranchIdFilterChange(selectBranchIdElement.value)">
+        <option disabled selected>Select Branch</option>
           <option *ngFor="let branchId of filteredBranchIds" [value]="branchId">{{ branchId }}</option>
       </select>
   </div>
   </div>
   <div class="filter-input">
     <input type="text" placeholder="Product Name" [(ngModel)]="productFilter" (input)="filterProducts()">
-    <div *ngIf="productFilter">
+    <div *ngIf="productFilter" class="dropdown">
         <select #selectProductElement (change)="onProductFilterChange(selectProductElement.value)">
+          <option disabled selected>Select Branch</option>
             <option *ngFor="let product of filteredProducts" [value]="product">{{ product }}</option>
         </select>
     </div>

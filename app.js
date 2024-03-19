@@ -1,19 +1,17 @@
 const express = require('express');
 const mysql = require('mysql');
-const bodyParser = require('body-parser');
-
-const app = express();
-const port = 3000; // Change this port if needed
+const bodyParser = require('body-parser'); 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // MySQL Database Connection
 const db = mysql.createConnection({
-  host: 'your-mysql-host',
-  user: 'your-mysql-username',
-  password: 'your-mysql-password',
-  database: 'your-database-name',
+  host: '127.0.0.1',
+  user: 'root',
+  password: 'password',
+  port:3306,
+  database: 'customer',
 });
 
 db.connect((err) => {

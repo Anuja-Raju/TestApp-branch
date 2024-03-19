@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
  
 
-  private apiUrl = 'http://192.168.26.39:3001/'; 
+  private apiUrl = 'http://10.0.0.67:7715/'; 
   getCustomerSumPrevY: any;
   getProductsForCategory: any;
   getmainProductAdvanceSum:any;
@@ -77,6 +77,8 @@ getAdvanceProductNames (): Observable<any> {
 filteredAdvanceData(filters: any): Observable<any> {
   return this.http.post(`${this.apiUrl}filteredAdvanceData`,filters);
 }
+
+
 
 getBranchNames(): Observable<string[]> {
   return this.http.get<string[]>(`${this.apiUrl}branchName`);

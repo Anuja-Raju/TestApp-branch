@@ -288,6 +288,21 @@ input[type="text"] {
   background-color: #e2e9eb;
 }
 
+.slideshow-container {
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.mySlides {
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto; /* Ensures images maintain aspect ratio */
+  object-fit: cover; /* Scales the image as large as possible without stretching */
+}
 
 @media only screen and (max-width: 600px) {
 
@@ -375,6 +390,22 @@ input[type="text"] {
 .filtered-data-container {
   overflow-x: auto;
   width: 100%; 
+}
+
+.slideshow-container {
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.mySlides {
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto; /* Ensures images maintain aspect ratio */
+  object-fit: cover; /* Scales the image as large as possible without stretching */
 }
 
 

@@ -63,6 +63,7 @@ export class FilterComponent implements OnInit {
         // Handle error
       }
     );
+    
   }
 
   // Function to switch tabs
