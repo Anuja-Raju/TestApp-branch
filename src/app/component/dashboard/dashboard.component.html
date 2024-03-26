@@ -1,29 +1,23 @@
-
-
 <div class="dashboard-container">
-  <!-- Tabs -->
+  <app-slideshow></app-slideshow>
+
   <div class="tab">
     <button class="tablinks" (click)="openTab($event, 'dailySnapshot')" [class.active]="currentTab === 'dailySnapshot'">Daily Business</button>
     <button class="tablinks" (click)="openTab($event, 'products')" [class.active]="currentTab === 'products'">Products</button>
     <button class="tablinks" (click)="openTab($event, 'filters')" [class.active]="currentTab === 'filters'">Filters</button>
   </div>
 
-  <!-- Tab content -->
   <div id="dailySnapshot" class="tabcontent" [ngStyle]="{ display: currentTab === 'dailySnapshot' ? 'block' : 'none' }">
     <h2 class="center-text">Daily Business Snapshot - {{ today }}</h2>
-    <!-- List of Tiles displayed horizontally -->
     <div class="tile-list-horizontal">
-      <!-- Tile for Total Deposit -->
       <div class="tile">
         <h3>Total Deposits</h3>
         <p>{{ totalDepositAmount | currency:'INR':'symbol':'1.2-2' }}</p>
       </div>
-      <!-- Tile for Total Advance -->
       <div class="tile">
         <h3>Total Advances</h3>
         <p>{{ totalAdvanceAmount | currency:'INR':'symbol':'1.2-2' }}</p>
       </div>
-      <!-- Tile for Total Business -->
       <div class="tile">
         <h3>Total Business</h3>
         <p>{{ totalBusinessAmount | currency:'INR':'symbol':'1.2-2' }}</p>
@@ -35,18 +29,14 @@
   <div id="products" class="tabcontent" [ngStyle]="{ display: currentTab === 'products' ? 'block' : 'none' }">
     <br>
     <br>
-    <!-- Radio buttons for selecting deposit or advance -->
     <div class="radio-container">
       <label><input type="radio" name="depositAdvanceOption" [(ngModel)]="selectedOption" value="deposit"> Deposit</label>
       <label><input type="radio" name="depositAdvanceOption" [(ngModel)]="selectedOption" value="advance"> Advance</label>
     </div>
-    <!-- Display selected option content -->
     <div *ngIf="selectedOption === 'deposit'">
-      <!-- Include the deposit table here -->
       <app-deposit></app-deposit>
     </div>
     <div *ngIf="selectedOption === 'advance'">
-      <!-- Include the advance table here -->
       <app-advance></app-advance>
     </div>
   </div>

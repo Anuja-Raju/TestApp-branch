@@ -25,6 +25,7 @@ import { FilterComponent } from './component/filter/filter.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { SlideshowComponent } from './component/slideshow/slideshow.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MatSelectModule } from '@angular/material/select';
     DepositComponent,
     AdvanceComponent,
     CustomerComponent,
-    FilterComponent
+    FilterComponent,
+    SlideshowComponent
 
   ],
   imports: [

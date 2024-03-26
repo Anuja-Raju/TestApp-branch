@@ -36,8 +36,7 @@ export class DepositComponent {
   }
 
   goToDashboard(): void {
-    // Use the router to navigate back to the dashboard
-    this.router.navigate(['/dashboard']); // Replace '/dashboard' with the actual route for your dashboard
+    this.router.navigate(['/dashboard']); 
   }
 
   fetchDepositSum() {

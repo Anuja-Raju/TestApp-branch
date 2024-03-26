@@ -1,5 +1,3 @@
-// auth.service.ts
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,9 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
- 
-
-  private apiUrl = 'http://10.0.0.67:7715/'; 
+  private apiUrl = 'http://192.168.26.17:7715/'; 
   getCustomerSumPrevY: any;
   getProductsForCategory: any;
   getmainProductAdvanceSum:any;
@@ -20,10 +16,7 @@ export class AuthService {
   getadvanceProductNames:any;
   getUserId: any;
   
- 
-
   constructor(private http: HttpClient) {}
-
   Signup(data: any): Observable<any> {
     return this.http.post(`${this.apiUrl}signup`, data);
   }
@@ -40,7 +33,6 @@ export class AuthService {
     return this.http.get(`${this.apiUrl}totalAdvance`);
   }
 
- 
 getCustomerSum(): Observable<any> {
   return this.http.get(`${this.apiUrl}customerSum`);
 }

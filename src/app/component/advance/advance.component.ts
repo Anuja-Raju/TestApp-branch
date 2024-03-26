@@ -15,11 +15,9 @@ export class AdvanceComponent implements OnInit{
   advanceProductNames: any;
 
   constructor(private authService: AuthService) {
-    // Calculate yesterday's date
     const today = new Date();
     this.yesterday = new Date(today);
     this.yesterday.setDate(today.getDate() - 1);
-    // this.getAdvanceDataSum()
   }
   ngOnInit(){
     this.fetchMainProductsAdvance();
@@ -27,7 +25,6 @@ export class AdvanceComponent implements OnInit{
     this.fetchAdvanceProductNames();
   }
   
-
   toggleProducts(category: string): void {
     this.expandedProducts[category] = !this.expandedProducts[category];
   }
@@ -35,16 +32,6 @@ export class AdvanceComponent implements OnInit{
   isExpanded(category: string): boolean {
     return this.expandedProducts[category];
   }
-
-  // getAdvanceDataSum(){
-  //   this.authService.getAdvanceDataSum().subscribe(
-  //     {
-  //       next:data=>{
-  //         console.log(data)
-  //       }
-  //     }
-  //   )
-  // }
 
   fetchMainProductsAdvance() {
     this.authService.getAdvanceSum().subscribe(
