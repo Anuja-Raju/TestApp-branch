@@ -5,6 +5,7 @@
     <button class="tablinks" (click)="openTab($event, 'dailySnapshot')" [class.active]="currentTab === 'dailySnapshot'">Daily Business</button>
     <button class="tablinks" (click)="openTab($event, 'products')" [class.active]="currentTab === 'products'">Products</button>
     <button class="tablinks" (click)="openTab($event, 'filters')" [class.active]="currentTab === 'filters'">Filters</button>
+    <button class="tablinks" (click)="openTab($event, 'atm')" [class.active]="currentTab === 'atm'">ATM</button>
   </div>
 
   <div id="dailySnapshot" class="tabcontent" [ngStyle]="{ display: currentTab === 'dailySnapshot' ? 'block' : 'none' }">
@@ -39,6 +40,7 @@
     <div *ngIf="selectedOption === 'advance'">
       <app-advance></app-advance>
     </div>
+
   </div>
 
   <div id="filters" class="tabcontent" [ngStyle]="{ display: currentTab === 'filters' ? 'block' : 'none' }">
@@ -47,5 +49,11 @@
 
 
   <app-filter></app-filter>
+
+
+  </div>
+  <div id="atm" class="tabcontent" [ngStyle]="{ display: currentTab === 'atm' ? 'block' : 'none' }">
+    <br>
+    <app-pie-chart></app-pie-chart>
 
   </div>

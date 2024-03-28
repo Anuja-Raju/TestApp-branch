@@ -26,6 +26,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { SlideshowComponent } from './component/slideshow/slideshow.component';
+import { PieChartComponent } from './component/pie-chart/pie-chart.component';
+import { ChartComponent } from './component/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { SlideshowComponent } from './component/slideshow/slideshow.component';
     AdvanceComponent,
     CustomerComponent,
     FilterComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    PieChartComponent,
+    ChartComponent
 
   ],
   imports: [

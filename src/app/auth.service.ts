@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://192.168.26.17:7715/'; 
+  private apiUrl = 'http://192.168.1.4:7715/'; 
   getCustomerSumPrevY: any;
   getProductsForCategory: any;
   getmainProductAdvanceSum:any;
@@ -15,6 +15,8 @@ export class AuthService {
   getsubProductAdvanceSum: any;
   getadvanceProductNames:any;
   getUserId: any;
+  getgetatmdata:any;
+
   
   constructor(private http: HttpClient) {}
   Signup(data: any): Observable<any> {
@@ -84,6 +86,9 @@ getProducts(): Observable<string[]> {
   return this.http.get<string[]>(`${this.apiUrl}productName`);
 }
 
+getATMData(): Observable<number[]> {
+  return this.http.get<number[]>(`${this.apiUrl}getatmdata`);
+}
 
 }
  
